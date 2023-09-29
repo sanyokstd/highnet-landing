@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   $(".application__phone").on('click', function () {
     $(this).setCursorPosition(3);
-  }).mask("+1 999 999 9999");
+  }).mask("+7 (999) 999 9999");
 
   // валидация
   $('.application__form').on('submit', function () {
@@ -203,21 +203,21 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".error").remove();
 
     if (applicationName.length < 1) {
-      $('.application-btn__box').before('<span class="error">Error</span>');
+      $('.application-btn__box').before('<span class="error">Не верно указано имя</span>');
       countErrors++
     }
     if (applicationPhone.length < 1) {
-      $('.application-btn__box').before('<span class="error">Error</span>');
+      $('.application-btn__box').before('<span class="error">Не верно указан номер</span>');
       countErrors++
     }
     if (applicationEmail.length < 1) {
-      $('.application-btn__box').before('<span class="error">Error</span>');
+      $('.application-btn__box').before('<span class="error">Не верно указано почту</span>');
       countErrors++
     } else {
       let pattern = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       let validEmail = pattern.test(applicationEmail);
       if (!validEmail) {
-        $('.application-btn__box').before('<span class="error">Error</span>');
+        $('.application-btn__box').before('<span class="error">Не верно указано почту</span>');
         countErrors++
       }
     }
